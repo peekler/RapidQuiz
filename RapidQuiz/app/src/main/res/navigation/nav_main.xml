@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/fragmentWelcome">
+
+    <fragment
+        android:id="@+id/fragmentWelcome"
+        android:name="hu.bme.aut.rapidquiz.ui.main.FragmentWelcome"
+        android:label="FragmentWelcome" >
+        <action
+            android:id="@+id/action_fragmentWelcome_to_fragmentQuiz"
+            app:destination="@id/fragmentQuiz" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentQuiz"
+        android:name="hu.bme.aut.rapidquiz.ui.quiz.FragmentQuiz"
+        android:label="FragmentQuiz" >
+        <action
+            android:id="@+id/action_fragmentQuiz_to_fragmentWelcome"
+            app:destination="@id/fragmentWelcome" />
+        <argument
+            android:name="quizConfig"
+            app:argType="hu.bme.aut.rapidquiz.model.QuizConfig" />
+    </fragment>
+</navigation>
